@@ -1,3 +1,7 @@
-Wieso kleidet sich kai wie ein frau?
+#include<stdio.h>
 
-		Weil er keinen Penis sondern eine Mumu hat!
+main()
+{
+    printf("Hello World");
+
+}
