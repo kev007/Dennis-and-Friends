@@ -4,13 +4,14 @@
 int main()
 {
 	char filename = "input.txt";
-	printf("opening file: %s\n", filename);
+	printf("opening file: %s\n", "input.txt");
 	int i=0, length=0;;
 	FILE *fp;
-	if((fp = fopen(filename, "r+")) == NULL) {
-			printf("No such file\n");
-			exit(1);
-		}
+	if((fp = fopen("input.txt", "r+")) == NULL)
+	{
+		printf("No such file\n");
+		exit(1);
+	}
 	else
 	{
 		fscanf(fp, "%d", &length);
@@ -23,7 +24,7 @@ int main()
 			fscanf(fp, "%lf", &array[i][2]);
 			i++;
 		}
-		printf("data from file '%s' contains following co-ordinates:\n", filename);
+		printf("data from file '%s' contains following co-ordinates:\n", "input.txt");
 		for(i=0; i<length; i++)
 		{
 			printf("%f %f %f\n", array[i][0], array[i][1], array[i][2]);
@@ -37,19 +38,21 @@ int main()
 
 		for(i=0; i<length; i++)
 		{
-			if(array[i][2] > 0 && array[i][2] < 5)
+			if(array[i][2] > minZ && array[i][2] < maxZ)
 			{
 				output[i][0] = array[i][0];
 				output[i][1] = array[i][1];
-				printf("%f %f\n", output[i][0], output[i][1]);
+				printf("%lf %lf\n", output[i][0], output[i][1]);
 			}
 			else
+			{
 				printf("no valid data\n");
+			}
 		}
 
-		printf("writing to file: %s\n", filename);
+		printf("writing to file: %s\n", "output.txt");
 		FILE *fp;
-		fp = fopen(filename, "w");
+		fp = fopen("output.txt", "w");
 		//fprintf(fp, "Testing...\n");
 		int i = 0;
 		for(i=0; i<length; i++)
@@ -62,11 +65,6 @@ int main()
 	fclose(fp);
 
 
-
-
-	}
-	fclose(fp);
-/*
 	printf("\n---Graphing Data---\n");
 	FILE *pipe = popen("pgnuplot -persist","w");
 	fflush(pipe);
@@ -74,7 +72,7 @@ int main()
 	fflush(pipe);
 	close(pipe);
 
-	*/
+
 	return 0;
 }
 
