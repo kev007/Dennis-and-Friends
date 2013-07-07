@@ -17,7 +17,7 @@ int main()
 
    ofstream file ("input.txt");
    int j = 0;
-   int length = 1000;
+   int length = 500;
    file << length << endl;
 
    while (j < length)
