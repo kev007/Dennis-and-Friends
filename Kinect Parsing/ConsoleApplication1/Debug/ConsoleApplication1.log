@@ -1,14 +1,16 @@
-﻿Der Buildvorgang wurde am 07.07.2013 13:39:19 gestartet.
-     1>Projekt "D:\Eigene Dateien\Dokumente\Info\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.vcxproj" auf Knoten "2", Build Ziel(e).
+﻿Der Buildvorgang wurde am 07.07.2013 15:03:38 gestartet.
+     1>Projekt "C:\Users\Dennis Bäuscher\git\Dennis-and-Friends\Kinect Parsing\ConsoleApplication1\ConsoleApplication1.vcxproj" auf Knoten "2", Build Ziel(e).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Program Files\Microsoft SDKs\Kinect\v1.7\inc" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ConsoleApplication1.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Program Files\Microsoft SDKs\Kinect\v1.7\inc" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ConsoleApplication1.cpp stdafx.cpp
+         stdafx.cpp
          ConsoleApplication1.cpp
+         Code wird generiert...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Eigene Dateien\Dokumente\Info\ConsoleApplication1\Debug\ConsoleApplication1.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\Microsoft SDKs\Kinect\v1.7\inc" "C:\Program Files\Microsoft SDKs\Kinect\v1.7\lib\x86\Kinect10.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Eigene Dateien\Dokumente\Info\ConsoleApplication1\Debug\ConsoleApplication1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Eigene Dateien\Dokumente\Info\ConsoleApplication1\Debug\ConsoleApplication1.lib" /MACHINE:X86 Debug\ConsoleApplication1.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Dennis Bäuscher\git\Dennis-and-Friends\Kinect Parsing\Debug\ConsoleApplication1.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\Microsoft SDKs\Kinect\v1.7\inc" "C:\Program Files\Microsoft SDKs\Kinect\v1.7\lib\x86\Kinect10.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Dennis Bäuscher\git\Dennis-and-Friends\Kinect Parsing\Debug\ConsoleApplication1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Dennis Bäuscher\git\Dennis-and-Friends\Kinect Parsing\Debug\ConsoleApplication1.lib" /MACHINE:X86 Debug\ConsoleApplication1.obj
          Debug\stdafx.obj
-         ConsoleApplication1.vcxproj -> D:\Eigene Dateien\Dokumente\Info\ConsoleApplication1\Debug\ConsoleApplication1.exe
-     1>Die Erstellung des Projekts "D:\Eigene Dateien\Dokumente\Info\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.vcxproj" ist abgeschlossen, Build Ziel(e).
+         ConsoleApplication1.vcxproj -> C:\Users\Dennis Bäuscher\git\Dennis-and-Friends\Kinect Parsing\Debug\ConsoleApplication1.exe
+     1>Die Erstellung des Projekts "C:\Users\Dennis Bäuscher\git\Dennis-and-Friends\Kinect Parsing\ConsoleApplication1\ConsoleApplication1.vcxproj" ist abgeschlossen, Build Ziel(e).
 
 Build erfolgreich.
 
-Verstrichene Zeit 00:00:01.58
+Verstrichene Zeit 00:00:01.91
