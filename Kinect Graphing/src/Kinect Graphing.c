@@ -3,42 +3,42 @@
 
 int main()
 {
-	char filename = "input.txt";
+	char filename = "input.txt"; //
 	printf("opening file: %s\n", "input.txt");
 	int i=0, length=0;;
-	FILE *fp;
-	if((fp = fopen("input.txt", "r+")) == NULL)
-	{
-		printf("No such file\n");
+	FILE *fp;                                       //neuen pointer auf datei/file, addresslegung auf file
+	if((fp = fopen("input.txt", "r+")) == NULL)      //input.txt soll in fp geladen werden, datei öffnen, r+ = lesen und schreiben und ändern
+	{                                               //if datei nicht existiert, dann
+		printf("No such file\n"); //ausgabe "no....." und programm beenden
 		exit(1);
 	}
-	else
+	else  //andernfalls
 	{
-		fscanf(fp, "%d", &length);
-		printf("length is: %d\n", length);
-		double array[length][3];
+		fscanf(fp, "%d", &length);  //zeile auslesen von fp in format integer und in variable "length" abspeichern
+		printf("length is: %d\n", length); //länge in console ausgeben
+		double array[length][3]; //neues array erstellen vom typ double , length zeile und 3 spalten x, y und z
 		while (i<length)
 		{
-			fscanf(fp, "%lf", &array[i][0]);
-			fscanf(fp, "%lf", &array[i][1]);
-			fscanf(fp, "%lf", &array[i][2]);
+			fscanf(fp, "%lf", &array[i][0]); //x koordinate auslesen und in spalte 0 speichern
+			fscanf(fp, "%lf", &array[i][1]); //y " spalte 1 speichern
+			fscanf(fp, "%lf", &array[i][2]);//z " spalte 2 speichern
 			i++;
 		}
-		printf("data from file '%s' contains following co-ordinates:\n", "input.txt");
-		for(i=0; i<length; i++)
+		printf("data from file '%s' contains following co-ordinates:\n", "input.txt"); //gebe "" in console aus
+		for(i=0; i<length; i++) //alle zeilen auslesen
 		{
-			printf("%f %f %f\n", array[i][0], array[i][1], array[i][2]);
+			printf("%f %f %f\n", array[i][0], array[i][1], array[i][2]); //ausgabe der x,y und z koordinaten
 		}
 
-		printf("\n---Parsing Data---\n");
+		printf("\n---Parsing Data---\n"); //hinweis bearbeitung der daten
 
-		double output[length][2];
-		double minZ = 0;
-		double maxZ = 5;
+		double output[length][2]; //neue variable "output" length zeile und 2 spalten
+		double minZ = 2.00000; //neue variable für minimum der entfernung von der kinect, z koordinate
+		double maxZ = 2.20000; //" maximum abstand
 
-		for(i=0; i<length; i++)
+		for(i=0; i<length; i++) //auslesen der koordinaten und ausgabe in "output.txt"
 		{
-			if(array[i][2] > minZ && array[i][2] < maxZ)
+			if(array[i][2] > minZ && array[i][2] < maxZ) //bedingung z koordinaten zwischen z min unbd z max
 			{
 				output[i][0] = array[i][0];
 				output[i][1] = array[i][1];
@@ -46,35 +46,49 @@ int main()
 			}
 			else
 			{
-				printf("no valid data\n");
+				printf("no valid data\n"); //wenn fehlerhaft oder keine daten dann ausgabe ""
 			}
 		}
 
-		printf("writing to file: %s\n", "output.txt");
-		FILE *fp;
-		fp = fopen("output.txt", "w");
-		//fprintf(fp, "Testing...\n");
-		int i = 0;
-		for(i=0; i<length; i++)
+		printf("writing to file: %s\n", "output.txt"); // neue ausgelesenen daten in datei "output.txt" schreiben
+		FILE *fp; // file pointer auf fp
+		fp = fopen("output.txt", "w"); //output.txt wird in fp geladen mit schreibrechte
+
+		int i = 0;                          //
+		for(i=0; i<length; i++)             //schleife um die zeilen, koordinaten von x und y der output.txt auszugeben
 		{
-			fprintf(fp, "%f %f\n", array[i][0], array[i][1]);
+			fprintf(fp, "%f %f\n", array[i][0], array[i][1]); //x und y koordinate neu in fp speichern
 		}
-		fclose(fp);
-		printf("file closed. \n");
+		fclose(fp); //file pointer fp output.txt schließen
+		printf("file closed. \n");  //ausgabe "fp geschlossen"
 	}
-	fclose(fp);
+	fclose(fp); //file pointer fp input.txt schließen
 
 
-	printf("\n---Graphing Data---\n");
-	FILE *pipe = popen("pgnuplot -persist","w");
-	fflush(pipe);
-	fprintf(pipe, "plot 'output.txt'\n");
-	fflush(pipe);
-	close(pipe);
+	printf("\n---Graphing Data---\n"); //ausgabe ""
+	FILE *pipe = popen("pgnuplot -persist","w"); //direkter befehl um ein anderes programm, hier gnuplot zu öffnen
+	fflush(pipe); //verbindung "pipe" leeren um kollisionen zu verhindenrrn
+	fprintf(pipe, "plot 'output.txt'\n"); //übergabe durch pipe befehl "plot" (daten, koordinaten, in einen graphen schreiben)
+	fflush(pipe); //pipe leeren
+	close(pipe); //pipe (verbindung) schließen
 
-
+	while(1)
+	{}
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
