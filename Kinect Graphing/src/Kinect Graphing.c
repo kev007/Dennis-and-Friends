@@ -46,7 +46,7 @@ int main()
 			}
 			else
 			{
-				printf("no valid data\n"); //wenn fehlerhaft oder keine daten dann ausgabe ""
+				printf("data point removed\n"); //wenn fehlerhaft oder keine daten dann ausgabe ""
 			}
 		}
 
